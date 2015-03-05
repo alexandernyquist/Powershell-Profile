@@ -22,9 +22,9 @@ Function Goto($project) {
 
 Set-Alias g Goto
 
-Function Browse() {
+Function Explore() {
 	$exe = "explorer.exe"
 	&$exe .
 }
 
-Set-Alias br Browse
+Set-Alias e Explore
