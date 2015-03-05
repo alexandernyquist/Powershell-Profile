@@ -10,6 +10,8 @@ Function Desktop() {
 	Set-Location -Path C:\Users\alexander.nyquist\Desktop
 }
 
+Set-Alias d Desktop
+
 Function Goto($project) {
 	If (Test-Path C:\Development\Projects\$project) {
 		Set-Location -Path C:\Development\Projects\$project
@@ -18,7 +20,11 @@ Function Goto($project) {
 	}
 }
 
+Set-Alias g Goto
+
 Function Browse() {
 	$exe = "explorer.exe"
 	&$exe .
 }
+
+Set-Alias br Browse
