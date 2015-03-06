@@ -28,3 +28,16 @@ Function Explore() {
 }
 
 Set-Alias e Explore
+
+Function OpenVisualStudioSolution($project) {
+    if (Test-Path C:\Development\Projects\$project) {
+        Set-Location -Path C:\Development\Projects\$project
+        $file = Get-ChildItem -Recurse -Filter *.sln | Select-Object -First 1
+        if ($file) {
+            $exe = "C:/Program Files (x86)/Microsoft Visual Studio 11.0/Common7/IDE/devenv.exe";
+            start $exe $file.FullName
+        }
+    }
+}
+
+Set-Alias sln OpenVisualStudioSolution
